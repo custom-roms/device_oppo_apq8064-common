@@ -18,7 +18,7 @@ if [ -e /dev/lvpool/userdata ]; then
     sed -i '/data/s/^/#/' /etc/recovery.fstab
     sed -i '/lvpool/s/^#//' /etc/recovery.fstab
 elif [ -e /dev/block/platform/msm_sdcc.1/by-name/sdcard ]; then
-    sed -i '/lvpool/s/^/#/' /fstab.qcom
+    #sed -i '/lvpool/s/^/#/' /fstab.qcom
     sed -i '/lvpool/s/^/#/' /etc/recovery.fstab
 else
     sed -i '/sdcard/s/^/#/' /fstab.qcom

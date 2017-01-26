@@ -1,7 +1,8 @@
 # Bluetooth
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.qualcomm.bt.hci_transport=smd \
-    qcom.bluetooth.soc=smd
+    qcom.bluetooth.soc=smd \
+    ro.boot.btmacaddr=00:a0:c6:6e:56:f2
 
 # Camera
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -42,3 +43,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.product.wireless=WCN3660 \
     wifi.interface=wlan0 \
     wifi.supplicant_scan_interval=15
+
+# Remove security
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.adb.secure=0 \
+    ro.secure=0
