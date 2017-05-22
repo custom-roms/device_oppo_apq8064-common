@@ -1483,16 +1483,88 @@ SectionVerb
 	Name "HiFi Rec"
 
 	EnableSequence
-		'MultiMedia1 Mixer SLIM_0_TX':1:1
+		'ANC Function':0:ON
+		'SLIM RX1 MUX':0:AIF1_PB
+		'SLIM RX6 MUX':0:AIF2_PB
+		'SLIM RX2 MUX':0:AIF1_PB
+		'SLIM RX7 MUX':0:AIF2_PB
+		'SLIM_0_RX Channels':0:Two
+		'MICBIAS3 CAPLESS Switch':1:1
+		'MICBIAS1 CAPLESS Switch':1:1
+		'RX1 MIX1 INP1':0:RX1
+		'RX1 MIX1 INP2':0:RX6
+		'RX2 MIX1 INP1':0:RX2
+		'RX2 MIX1 INP2':0:RX7
+		'HPHL DAC Switch':1:1
+		'HPHR DAC Switch':1:1
+		'HPHL Volume':1:70
+		'HPHR Volume':1:70
+		'RX1 Digital Volume':1:68
+		'RX2 Digital Volume':1:68
+		'ANC Slot':1:0
+		'ANC1 FB MUX':0:EAR_HPH_L
+		'ANC1 MUX':0:ADC4
+		'ANC2 MUX':0:ADC3
+		'ADC3 Volume':1:85
+		'ADC4 Volume':1:85
+		'AIF3_CAP Mixer SLIM TX3':1:1
+		'AIF3_CAP Mixer SLIM TX5':1:1
+		'SLIM TX3 MUX':0:RMIX1
+		'SLIM TX5 MUX':0:RMIX2
+		'IIR1 Band1':2:0x10000000 0x0 0x0 0x0 0x0
+		'IIR1 Band2':2:0x10000000 0x0 0x0 0x0 0x0
+		'IIR1 Band3':2:0x10000000 0x0 0x0 0x0 0x0
+		'IIR1 Band4':2:0x10000000 0x0 0x0 0x0 0x0
+		'IIR1 Band5':2:0x10000000 0x0 0x0 0x0 0x0
+		'IIR1 Enable Band1':1:1
+		'IIR1 Enable Band2':1:1
+		'IIR1 Enable Band3':1:1
+		'IIR1 Enable Band4':1:1
+		'IIR1 Enable Band5':1:1
+		'RX1 MIX2 INP1':0:IIR1
+		'RX2 MIX2 INP1':0:IIR1
 	EndSequence
 
 	DisableSequence
-		'MultiMedia1 Mixer SLIM_0_TX':1:0
+		'SLIM RX1 MUX':0:ZERO
+		'SLIM RX6 MUX':0:ZERO
+		'SLIM RX2 MUX':0:ZERO
+		'SLIM RX7 MUX':0:ZERO
+		'RX1 MIX1 INP1':0:ZERO
+		'RX1 MIX1 INP2':0:ZERO
+		'RX2 MIX1 INP1':0:ZERO
+		'RX2 MIX1 INP2':0:ZERO
+		'HPHL DAC Switch':1:0
+		'HPHR DAC Switch':1:0
+		'HPHL Volume':1:0
+		'HPHR Volume':1:0
+		'ANC1 MUX':0:ZERO
+		'ANC2 MUX':0:ZERO
+		'ADC3 Volume':1:0
+		'ADC4 Volume':1:0
+		'MICBIAS3 CAPLESS Switch':1:0
+		'MICBIAS1 CAPLESS Switch':1:0
+		'AIF3_CAP Mixer SLIM TX3':1:0
+		'AIF3_CAP Mixer SLIM TX5':1:0
+		'SLIM TX3 MUX':0:ZERO
+		'SLIM TX5 MUX':0:ZERO
+		'IIR1 Enable Band1':1:0
+		'IIR1 Enable Band2':1:0
+		'IIR1 Enable Band3':1:0
+		'IIR1 Enable Band4':1:0
+		'IIR1 Enable Band5':1:0
+		'IIR1 Band1':2:0x0 0x0 0x0 0x0 0x0
+		'IIR1 Band2':2:0x0 0x0 0x0 0x0 0x0
+		'IIR1 Band3':2:0x0 0x0 0x0 0x0 0x0
+		'IIR1 Band4':2:0x0 0x0 0x0 0x0 0x0
+		'IIR1 Band5':2:0x0 0x0 0x0 0x0 0x0
+		'RX1 MIX2 INP1':0:ZERO
+		'RX2 MIX2 INP1':0:ZERO
+		'ANC Function':0:OFF
 	EndSequence
 
-	# ALSA PCMs
-	CapturePCM 0
-	PlaybackPCM 0
+	ACDBID	26:1
+	EffectsMixerCTL "SRS TruMedia"
 
 EndSection
 
@@ -2067,10 +2139,14 @@ SectionVerb
 
 	EnableSequence
 		'MultiMedia1 Mixer INTERNAL_FM_TX':1:1
+		'MICBIAS1 CAPLESS Switch':1:1
+		'MICBIAS3 CAPLESS Switch':1:1
 	EndSequence
 
 	DisableSequence
 		'MultiMedia1 Mixer INTERNAL_FM_TX':1:0
+		'MICBIAS1 CAPLESS Switch':1:0
+		'MICBIAS3 CAPLESS Switch':1:0
 	EndSequence
 
 	# ALSA PCMs
@@ -2105,10 +2181,14 @@ SectionVerb
 
 	EnableSequence
 		'MultiMedia1 Mixer SLIM_4_TX':1:1
+		'MICBIAS1 CAPLESS Switch':1:1
+		'MICBIAS3 CAPLESS Switch':1:1
 	EndSequence
 
 	DisableSequence
 		'MultiMedia1 Mixer SLIM_4_TX':1:0
+		'MICBIAS1 CAPLESS Switch':1:0
+		'MICBIAS3 CAPLESS Switch':1:0
 	EndSequence
 
 	# ALSA PCMs
@@ -2421,10 +2501,14 @@ SectionVerb
 
 	EnableSequence
 		'MultiMedia5 Mixer SLIM_0_TX':1:1
+		'MICBIAS1 CAPLESS Switch':1:1
+		'MICBIAS3 CAPLESS Switch':1:1
 	EndSequence
 
 	DisableSequence
 		'MultiMedia5 Mixer SLIM_0_TX':1:0
+		'MICBIAS1 CAPLESS Switch':1:0
+		'MICBIAS3 CAPLESS Switch':1:0
 	EndSequence
 
 	# ALSA PCMs
